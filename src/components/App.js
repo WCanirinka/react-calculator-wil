@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-      <div id="calc-container">
+      <div id="calc-container" className="app">
         <Display />
         <ButtonPanel />
       </div>
