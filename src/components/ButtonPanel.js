@@ -18,14 +18,14 @@ const ButtonPanel = () => {
     <div className="btn-panel">
       {buttons.map((group, outerIndex) => (
         <div className="btn-group" key={groupIndices[outerIndex]}>
-          {group.map(character => (
-            if(operationCharacters.includes(character)){
-              return <Button key={character} name={character} />
-            } if(character === '0') {
-              return <Button key={character} name={character} color wide />
+          {group.map(character => {
+            if (operationCharacters.includes(character)) {
+              return <Button key={character} name={character} />;
+            } if (character === '0') {
+              return <Button key={character} name={character} color wide />;
             }
-            <Button key={character} name={character} color />
-          ))}
+            return <Button key={character} name={character} color />;
+          })}
         </div>
       ))}
     </div>
