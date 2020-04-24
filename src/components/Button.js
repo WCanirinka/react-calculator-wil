@@ -2,21 +2,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ name, color, wide }) => (
-  <button
-    className="button"
-    type="button"
-    style={{
-      backgroundColor: color ? '#dfdfdf' : null,
-      width: wide ? '50%' : null,
-    }}
-  >
-    {name}
-  </button>
-);
+const Button = ({
+  name, color, wide, clickHandler,
+}) => {
+  const handleClick = buttonName => clickHandler(buttonName);
+  return (
+    <button
+      className="button"
+      type="button"
+      style={{
+        backgroundColor: color ? '#dfdfdf' : null,
+        width: wide ? '50%' : null,
+      }}
+      onClick={() => handleClick(name)}
+    >
+      {name}
+    </button>
+  );
+};
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired,
   color: PropTypes.bool,
   wide: PropTypes.bool,
 };
