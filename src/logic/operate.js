@@ -1,22 +1,22 @@
 import Big from 'big';
 
 const operate = (numberOne, numberTwo, operation) => {
-  const x = new Big(numberOne);
-  const y = new Big(numberTwo);
+  const a = new Big(numberOne);
+  const b = new Big(numberTwo);
 
   if (operation === '-') {
-    return x.minus(y);
+    return a.minus(b);
   }
 
   if (operation === '+') {
-    return x.plus(y);
+    return a.plus(b);
   }
 
   if (operation === 'x') {
-    return x.mul(y);
+    return a.mul(b);
   }
 
-  return x.div(y);
+  return a.div(b);
 };
 
 export default operate;
