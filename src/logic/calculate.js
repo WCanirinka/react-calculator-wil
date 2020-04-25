@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import operate from './operate';
 
 const calculate = (calculator, buttonName) => {
@@ -7,20 +8,26 @@ const calculate = (calculator, buttonName) => {
 
   if (buttonName === '+/-') {
     if (next) {
-      next = (+next * -1);
+      next = (+next * -1).toString();
     }
-    total = (+total * -1);
+    if (total && total !== 'NaN' && !next) {
+      total = (+total * -1).toString();
+    }
   }
 
   if (buttonName === '%') {
     if (next) {
-      next *= 0.01;
-    } else {
-      total *= 0.01;
+      next = operate(null, next, buttonName);
+    } else if (!isNaN(total)) {
+      total = operate(null, next, buttonName);
     }
   }
 
   if (buttonName === '=') {
+    if (total === 'NaN' && next && operation) {
+      return { total: 'NaN', next: null, operation: null };
+    }
+
     if (next) {
       total = operate(total, next, operation);
       next = null;
@@ -29,6 +36,15 @@ const calculate = (calculator, buttonName) => {
   }
 
   if (operations.includes(buttonName)) {
+    if (total === 'NaN' && next && operation) {
+      return { total: 'NaN', next: null, operation: buttonName };
+    }
+
+    if (total && next && operation) {
+      total = operate(total, next, buttonName);
+      next = null;
+    }
+
     operation = buttonName;
   }
 
