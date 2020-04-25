@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const ButtonPanel = ({ clickHandler }) => {
+
+import Button from './Button';
+const ButtonPanel = () => {
   const [buttons] = useState([
     ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'X'],
@@ -14,9 +17,7 @@ const ButtonPanel = ({ clickHandler }) => {
   const [groupIndices] = useState([1, 2, 3, 4]);
 
   const [operationCharacters] = useState(['÷', 'X', '-', '+', '=']);
-
   const handleClick = buttonName => clickHandler(buttonName);
-
   return (
     <div className="btn-panel">
       {buttons.map((group, outerIndex) => (
@@ -49,6 +50,11 @@ const ButtonPanel = ({ clickHandler }) => {
                 clickHandler={handleClick}
               />
             );
+              return <Button key={character} name={character} />;
+            } if (character === '0') {
+              return <Button key={character} name={character} color wide />;
+            }
+            return <Button key={character} name={character} color />;
           })}
         </div>
       ))}

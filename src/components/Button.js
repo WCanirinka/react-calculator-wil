@@ -24,6 +24,21 @@ const Button = ({
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   clickHandler: PropTypes.func.isRequired,
+const Button = ({ name, color, wide }) => (
+  <button
+    className="button"
+    type="button"
+    style={{
+      backgroundColor: color ? '#dfdfdf' : null,
+      width: wide ? '50%' : null,
+    }}
+  >
+    {name}
+  </button>
+);
+
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
   color: PropTypes.bool,
   wide: PropTypes.bool,
 };

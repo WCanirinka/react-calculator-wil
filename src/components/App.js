@@ -29,8 +29,6 @@ class App extends Component {
     const { total, next, operation } = this.state;
     return (
       <div id="calc-container" className="app">
-        <Display result={total} next={next} operation={operation} />
-        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
