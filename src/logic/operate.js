@@ -16,6 +16,10 @@ const operate = (numberOne, numberTwo, operation) => {
     return a.mul(b);
   }
 
+  if (operation === '%') {
+    return ((a.mul(b)) / 100);
+  }
+
   return a.div(b);
 };
 
