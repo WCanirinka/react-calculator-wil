@@ -50,10 +50,13 @@ const ButtonPanel = ({ clickHandler }) => {
               />
             );
           })}
-        </div>
-      ))}
-    </div>
-  );
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};
+
+ButtonPanel.defaultProps = {
+  clickHandler: null,
 };
 
 ButtonPanel.propTypes = {
