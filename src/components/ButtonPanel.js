@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import Button from './Button';
 
 const ButtonPanel = () => {
@@ -27,13 +26,10 @@ const ButtonPanel = () => {
             }
             return <Button key={character} name={character} color />;
           })}
-
-ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func,
-};
-
-ButtonPanel.defaultProps = {
-  clickHandler: null,
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default ButtonPanel;
