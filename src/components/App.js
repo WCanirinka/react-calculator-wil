@@ -6,6 +6,7 @@ import calculate from '../logic/calculate';
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       total: '0',
       next: null,
@@ -28,9 +29,9 @@ class App extends Component {
   render() {
     const { total, next, operation } = this.state;
     return (
-      <div id="calc-container">
-        <Display />
-        <ButtonPanel />
+      <div id="calculator-container" className="app">
+        <Display result={total} next={next} operation={operation} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
