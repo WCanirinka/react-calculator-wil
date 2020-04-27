@@ -16,7 +16,7 @@ const ButtonPanel = ({ clickHandler }) => {
   const handleClick = buttonName => clickHandler(buttonName);
 
   return (
-    <div className="btn-panel">
+    <div className="button-panel">
       {buttons.map((group, outerIndex) => (
         <div className="btn-group" key={buttons[outerIndex]}>
           {group.map(character => {
