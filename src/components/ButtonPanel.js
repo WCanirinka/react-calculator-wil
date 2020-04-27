@@ -11,8 +11,6 @@ const ButtonPanel = ({ clickHandler }) => {
     ['0', '.', '='],
   ]);
 
-  const [groupIndices] = useState([1, 2, 3, 4]);
-
   const [operationCharacters] = useState(['÷', 'X', '-', '+', '=']);
 
   const handleClick = buttonName => clickHandler(buttonName);
@@ -20,7 +18,7 @@ const ButtonPanel = ({ clickHandler }) => {
   return (
     <div className="btn-panel">
       {buttons.map((group, outerIndex) => (
-        <div className="btn-group" key={groupIndices[outerIndex]}>
+        <div className="btn-group" key={buttons[outerIndex]}>
           {group.map(character => {
             if (operationCharacters.includes(character)) {
               return (

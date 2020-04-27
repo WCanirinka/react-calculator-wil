@@ -49,15 +49,41 @@ const calculate = (calculator, buttonName) => {
   }
 
   if (buttonName === '.') {
-    if (next && !next.toString().contains('.')) {
-      next = `${next.toString()}.`;
+    if (total && !isNaN(total) && !total.split('').includes('.')) {
+      total = `${total}.`;
+    }
+    if (next && !next.split('').includes('.')) {
+      next = `${next}.`;
+    }
+    if (!next && operation && total !== 'NaN') {
+      next = '0.';
     }
   }
 
   if (buttonName === 'AC') {
-    total = null;
+    total = '0';
     next = null;
     operation = null;
+  }
+
+  if (!isNaN(Number(buttonName)) && (total !== '0' && total !== 'NaN') && !operation) {
+    total += buttonName;
+  }
+
+  if (!isNaN(Number(buttonName)) && total === '0' && !operation) {
+    total = buttonName;
+  }
+
+  if (!isNaN(Number(buttonName)) && operation && next !== null) {
+    next += buttonName;
+  }
+
+  if (!isNaN(Number(buttonName)) && operation && next === null) {
+    next = buttonName;
+  }
+
+  if (total === 'NaN' && !isNaN(buttonName) && !operation) {
+    total = buttonName;
   }
 
   return { total, next, operation };
