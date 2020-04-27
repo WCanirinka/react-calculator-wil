@@ -1,3 +1,47 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/792b5008-a08d-4b2e-99c3-f6c2d9813e0b/deploy-status)](https://app.netlify.com/sites/modest-allen-555647/deploys)
+
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Issues][issues-shield]][issues-url]
+<br />
+<p align="center">
+ 
+  <h3 align="center">Calculator App</h3>
+  <p align="center">
+    Create App with Create-React-App
+    <br />
+    <a href="https://github.com/WCanirinka/react-calculator-wil"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/WCanirinka/react-calculator-wil">Report Bug</a>
+    ·
+    <a href="https://github.com/WCanirinka/react-calculator-wil">Request Feature</a>
+  </p>
+</p>
+
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+* [Available Scripts](#Scripts)
+* [Use](#use)
+* [Roadmap](#roadmap)
+* [License](#license)
+* [Contact](#contact)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This project tests the understanding of factory functions and modules in Javascript.
+
+Full task description: [Here](https://microverse.pathwright.com/library/fast-track-curriculum/69047/path/step/44896082/).
+
+## Built With
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +110,50 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- ## Screenshots
+
+![screenshot](screenshots/Register-Page.png)
+
+
+![screenshot](screenshots/Tic-Tac-Toe.png)
+
+
+![screenshot](screenshots/draw.png) -->
+
+
+
+## Getting Started
+
+- git clone https://github.com/WCanirinka/react-calculator-wil
+
+- cd Tic-Tac-Toe-js
+
+- Open the index.html file in any web browser of your choosing.
+
+
+## Live Version
+
+- You can view the app [Here](https://modest-allen-555647.netlify.app)
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/WCanirinka/react-calculator-wil/issues) for a list of proposed features (and known issues).
+
+
+<!-- CONTACT -->
+## Contact
+Wilfried Canirinka
+
+* [Github profile](https://github.com/WCanirinka)
+
+* [Twitter](https://twitter.com/WCanirinka )
+
+Project Link: [Project repo](https://github.com/WCanirinka/react-calculator-wil)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/badge/Contributors-2-%2300ff00
+[contributors-url]: https://github.com/WCanirinka/Weather-App-JS/graphs/contributors
+[issues-shield]: https://img.shields.io/badge/issues-0-%2300ff00
+[issues-url]: https://github.com/WCanirinka/react-calculator-wil/issues/
