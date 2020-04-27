@@ -1,71 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import Button from './Button';
 
+const ButtonPanel = () => {
+  const [buttons] = useState([
+    ['AC', '+/-', '%', '÷'],
+    ['7', '8', '9', 'X'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
+  ]);
 
-class ButtonPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+  const [groupIndices] = useState([1, 2, 3, 4]);
 
-  handleClick(buttonName) {
-    const { clickHandler } = this.props;
-    clickHandler(buttonName);
-  }
+  const [operationCharacters] = useState(['÷', 'X', '-', '+', '=']);
 
-  renderButton(name) {
-    return (
-      <Button
-        buttonName={name}
-        clickHandler={this.handleClick}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <div className="btn-panel">
-        <div className="group1 board-row">
-          {this.renderButton('AC')}
-          {this.renderButton('+/-')}
-          {this.renderButton('%')}
-          {this.renderButton('÷', true)}
+  return (
+    <div className="btn-panel">
+      {buttons.map((group, outerIndex) => (
+        <div className="btn-group" key={groupIndices[outerIndex]}>
+          {group.map(character => {
+            if (operationCharacters.includes(character)) {
+              return <Button key={character} name={character} />;
+            } if (character === '0') {
+              return <Button key={character} name={character} color wide />;
+            }
+            return <Button key={character} name={character} color />;
+          })}
         </div>
-        <div className="group2 board-row">
-          {this.renderButton('7')}
-          {this.renderButton('8')}
-          {this.renderButton('9')}
-          {this.renderButton('x', true)}
-        </div>
-        <div className="group3 board-row">
-          {this.renderButton('4')}
-          {this.renderButton('5')}
-          {this.renderButton('6')}
-          {this.renderButton('-', true)}
-        </div>
-        <div className="group4 board-row">
-          {this.renderButton('1')}
-          {this.renderButton('2')}
-          {this.renderButton('3')}
-          {this.renderButton('+', true)}
-        </div>
-        <div className="group5 board-row">
-          {this.renderButton('0', false, true)}
-          {this.renderButton('.')}
-          {this.renderButton('=', true)}
-        </div>
-      </div>
-    );
-  }
-}
-
-ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func,
-};
-
-ButtonPanel.defaultProps = {
-  clickHandler: null,
+      ))}
+    </div>
+  );
 };
 
 export default ButtonPanel;
